@@ -9,8 +9,8 @@ public class DivideAndConquer_FindTheMedian {
          *      Os dois arrays devem possuir tamanhos iguais;
          */
 
-        final int[] A_ARRAY = { 2, 3, 5, 6, 9 };
-        final int[] B_ARRAY = { 1, 5, 7, 9, 10 };
+        final int[] A_ARRAY = { 2, 3, 5, 7, 9 };
+        final int[] B_ARRAY = { 1, 5, 6, 9, 10 };
         int[] cArray = new int[A_ARRAY.length + B_ARRAY.length];
         final int MEDIANA = findTheMedianBetweenSortedArrays(A_ARRAY, B_ARRAY, cArray, 0, A_ARRAY.length);
         
