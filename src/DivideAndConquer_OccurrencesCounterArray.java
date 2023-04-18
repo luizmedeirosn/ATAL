@@ -41,11 +41,11 @@ public class DivideAndConquer_OccurrencesCounterArray {
             return;
 
         } else if (end-begin < 1) {
-            Integer searchedNumer = occurrencesCounterArray.get(array[begin]);
-            if ( searchedNumer == null ) {
+            Integer searchedNumber = occurrencesCounterArray.get(array[begin]);
+            if ( searchedNumber == null ) {
                 occurrencesCounterArray.put(array[begin], 1);
             } else {
-                occurrencesCounterArray.put(array[begin], searchedNumer.intValue() + 1);
+                occurrencesCounterArray.put(array[begin], searchedNumber.intValue() + 1);
             }
             return;
 
