@@ -59,7 +59,7 @@ public class GreedyAlgorithm_LeastNumberOfStops {
             currentPoint = travelledDistance + tankCapacity;
             futurePoint = arrayOfStops[i+2];
 
-            if (currentPoint <= futurePoint && currentPoint < totalDistance) {
+            if (currentPoint < futurePoint && currentPoint < totalDistance) {
                 countStops++;
                 tankCapacity = RECHARGE;
             }
