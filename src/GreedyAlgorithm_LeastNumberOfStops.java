@@ -41,27 +41,27 @@ public class GreedyAlgorithm_LeastNumberOfStops {
         sc.close();
     }
 
-    private static int findTheNumberOfStops(int[] arrayOfStops, int tankCapacity) {
+    private static int findTheNumberOfStops(int[] arrayOfStops, int gasolineInTheTank) {
         int travelledDistance = 0;
         int totalDistance = arrayOfStops[arrayOfStops.length - 1];
-        final int RECHARGE = tankCapacity;
+        final int RECHARGE = gasolineInTheTank;
         int countStops = 0;
         int currentPoint;
         int futurePoint;
 
-        for (int i = 0; travelledDistance + tankCapacity < totalDistance; i++) {
-            tankCapacity -= arrayOfStops[i+1] - arrayOfStops[i];
-            if (tankCapacity < 0) {
+        for (int i = 0; travelledDistance + gasolineInTheTank < totalDistance; i++) {
+            gasolineInTheTank -= arrayOfStops[i+1] - arrayOfStops[i];
+            if (gasolineInTheTank < 0) {
                 return -1;
             }
 
             travelledDistance += arrayOfStops[i+1] - arrayOfStops[i];
-            currentPoint = travelledDistance + tankCapacity;
+            currentPoint = travelledDistance + gasolineInTheTank;
             futurePoint = arrayOfStops[i+2];
 
             if (currentPoint < futurePoint && currentPoint < totalDistance) {
                 countStops++;
-                tankCapacity = RECHARGE;
+                gasolineInTheTank = RECHARGE;
             }
         }
         return countStops;
