@@ -11,15 +11,15 @@ public class SimpleBruteForce_SmallestMissingPositiveInt {
     }
 
     private static int getSmallestMissingPositiveInt(int[] ARRAY) {
-        int menor = 1;
+        int smallest = 1;
         for (int i = 0; i < ARRAY.length; i++) {
-            if (menor <= ARRAY[i]) {
-                menor++;
-                if (ARRAY[i] >= menor){
-                    menor--;
+            if (smallest <= ARRAY[i]) {
+                smallest++;
+                if (ARRAY[i] >= smallest){
+                    smallest--;
                 }
             }
         }
-        return menor;
+        return smallest;
     }
 }
