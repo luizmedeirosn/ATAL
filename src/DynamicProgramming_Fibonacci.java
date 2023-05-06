@@ -12,6 +12,7 @@ public class DynamicProgramming_Fibonacci {
 
     private static List<Long> memoryList = new ArrayList<>(Arrays.asList(0L, 1L));
     private static int indexList = 2;
+    
     private static Long fibonacci(int num) {
         if (num < 2) {
             return (long)num;
