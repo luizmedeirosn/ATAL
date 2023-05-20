@@ -5,7 +5,7 @@ public class SimpleBruteForce_EncryptedMessage {
         System.out.println(searchingPatternString(TEXT, "bzbzbzu"));
     }
 
-    private static boolean searchingPatternString(String text, String pattern) {
+    private static boolean searchingPatternString(final String text, final String pattern) {
         int patternIndex = 0;
         for (int i = 0; i < text.length(); i++) {
             if (text.charAt(i) == pattern.charAt(patternIndex)) {
