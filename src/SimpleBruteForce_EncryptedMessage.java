@@ -5,16 +5,16 @@ public class SimpleBruteForce_EncryptedMessage {
         System.out.println(searchingPatternString(TEXT, "bzbzbzu"));
     }
 
-    private static boolean searchingPatternString(final String text, final String pattern) {
+    private static boolean searchingPatternString(final String TEXT, final String PATTERN) {
         int patternIndex = 0;
-        for (int i = 0; i < text.length(); i++) {
-            if (text.charAt(i) == pattern.charAt(patternIndex)) {
+        for (int i = 0; i < TEXT.length(); i++) {
+            if (TEXT.charAt(i) == PATTERN.charAt(patternIndex)) {
                 patternIndex++;
             } else {
                 patternIndex = 0;
             }
 
-            if (patternIndex == pattern.length()) {
+            if (patternIndex == PATTERN.length()) {
                 return true;
             }
         }
