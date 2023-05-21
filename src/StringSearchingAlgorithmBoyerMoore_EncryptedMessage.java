@@ -6,6 +6,8 @@ public class StringSearchingAlgorithmBoyerMoore_EncryptedMessage {
         final String TEXT = 
             "kvjlixapejrbxeenpbzphkhthbkwyrwamnugzhppfxiyjyanhapfwbzubghxmshrlyujfjhrsovkvveylnbxnawavggfdfggrzizyvmfohigeabgkszfnbkmffbzbzxjffqbualeytqrphyrbjqdjqavctgxjifqgfgydhoiwhrvwqbxgrixydzbpzjnhopvlazbzumzhhfavoctdfytvvggikngkwzibzbzbzuxgjtlxkojlefilbrboignbzsudssvqynbzuapbpqvlubdoyxkkwhcoudvtkmikbzbzansgsutdjythzl";
 
+        System.out.println( searchingPatternString("!!!@13@##$ 22324112& DNs", "$ 22324112") );
+        System.out.println( searchingPatternString("!!!@13@##$ 22324112& DNs", " $ 22324112") );
         System.out.println( searchingPatternString(TEXT, "bzbzbzu") );
         System.out.println( searchingPatternString(TEXT, "bzbzbza") );
         System.out.println( searchingPatternString("SÓ SE APRENDE COM A PRÁTICA E FAZENDO NA VERA", "NA VERA") );
@@ -47,14 +49,18 @@ public class StringSearchingAlgorithmBoyerMoore_EncryptedMessage {
         final int WORD_LENGTH = WORD.length();
         for ( Character s : WORD.toCharArray() ) {
             if (increment == WORD_LENGTH) {
-                badMatchTable.put(s, increment);
+                badMatchTable.put( s, max(1, WORD_LENGTH - increment- 1) );
             } else if (badMatchTable.containsKey(s) == false) {
-                badMatchTable.put(s, WORD_LENGTH-increment);
+                badMatchTable.put( s, max(1, WORD_LENGTH - increment- 1) );
             } else {
-                badMatchTable.replace(s, WORD_LENGTH-increment);
+                badMatchTable.replace( s, max(1, WORD_LENGTH - increment- 1) );
             }
             increment++;
         }
         return badMatchTable;
+    }
+
+    private static int max(int a, int b) {
+        return a > b ? a : b;
     }
 }
