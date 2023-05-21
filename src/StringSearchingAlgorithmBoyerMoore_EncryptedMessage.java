@@ -1,8 +1,10 @@
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
 public class StringSearchingAlgorithmBoyerMoore_EncryptedMessage {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException, IOException {
+        new ProcessBuilder("cmd", "cls", "/c").inheritIO().start().waitFor();
         final String TEXT = 
             "kvjlixapejrbxeenpbzphkhthbkwyrwamnugzhppfxiyjyanhapfwbzubghxmshrlyujfjhrsovkvveylnbxnawavggfdfggrzizyvmfohigeabgkszfnbkmffbzbzxjffqbualeytqrphyrbjqdjqavctgxjifqgfgydhoiwhrvwqbxgrixydzbpzjnhopvlazbzumzhhfavoctdfytvvggikngkwzibzbzbzuxgjtlxkojlefilbrboignbzsudssvqynbzuapbpqvlubdoyxkkwhcoudvtkmikbzbzansgsutdjythzl";
 
@@ -45,18 +47,17 @@ public class StringSearchingAlgorithmBoyerMoore_EncryptedMessage {
 
     private static Map<Character, Integer> buildBadMatchTable(final String WORD) {
         Map<Character, Integer> badMatchTable = new HashMap<>();
-        int increment = 1;
+        int index = 0;
         final int WORD_LENGTH = WORD.length();
         for ( Character s : WORD.toCharArray() ) {
-            if (increment == WORD_LENGTH) {
-                badMatchTable.put( s, max(1, WORD_LENGTH - increment- 1) );
-            } else if (badMatchTable.containsKey(s) == false) {
-                badMatchTable.put( s, max(1, WORD_LENGTH - increment- 1) );
+            if (badMatchTable.containsKey(s) == false) {
+                badMatchTable.put( s, max(1, WORD_LENGTH - index - 1) );
             } else {
-                badMatchTable.replace( s, max(1, WORD_LENGTH - increment- 1) );
+                badMatchTable.replace( s, max(1, WORD_LENGTH - index - 1) );
             }
-            increment++;
+            index++;
         }
+        // badMatchTable.forEach( (key, value) -> System.out.println(key + ": " + value) );
         return badMatchTable;
     }
 
