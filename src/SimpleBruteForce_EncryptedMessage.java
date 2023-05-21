@@ -8,7 +8,7 @@ public class SimpleBruteForce_EncryptedMessage {
     private static boolean searchingPatternString(final String TEXT, final String PATTERN) {
         int patternIndex = 0;
         for (int i = 0; i < TEXT.length(); i++) {
-            if (TEXT.charAt(i) == PATTERN.charAt(patternIndex)) {
+            if ( TEXT.charAt(i) == PATTERN.charAt(patternIndex) ) {
                 patternIndex++;
             } else {
                 patternIndex = 0;
