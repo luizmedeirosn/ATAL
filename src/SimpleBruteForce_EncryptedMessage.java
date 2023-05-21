@@ -3,6 +3,7 @@ public class SimpleBruteForce_EncryptedMessage {
         final String TEXT =
             "kvjlixapejrbxeenpbzphkhthbkwyrwamnugzhppfxiyjyanhapfwbzubghxmshrlyujfjhrsovkvveylnbxnawavggfdfggrzizyvmfohigeabgkszfnbkmffbzbzxjffqbualeytqrphyrbjqdjqavctgxjifqgfgydhoiwhrvwqbxgrixydzbpzjnhopvlazbzumzhhfavoctdfytvvggikngkwzibzbzbzuxgjtlxkojlefilbrboignbzsudssvqynbzuapbpqvlubdoyxkkwhcoudvtkmikbzbzansgsutdjythzl";
         System.out.println(searchingPatternString(TEXT, "bzbzbzu"));
+        System.out.println(searchingPatternString(TEXT, "abzbabzu"));
     }
 
     private static boolean searchingPatternString(final String TEXT, final String PATTERN) {
