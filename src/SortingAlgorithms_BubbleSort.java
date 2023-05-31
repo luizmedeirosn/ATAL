@@ -13,8 +13,8 @@ public class SortingAlgorithms_BubbleSort {
         long endTime = System.currentTimeMillis();
         long timeTotal = endTime - startTime;
 
-        System.out.println("Tempo gasto pelo algoritmo |bubbleSort| para ordenar " +
-        QUANTITY + " elementos: " + timeTotal/1000 + " segundos");
+        System.out.println("Time spent by the algorithm |bubbleSort| to sort " +
+        QUANTITY + " elements: " + timeTotal/1000 + " seconds");
     }
 
     private static int[] bubbleSort(int[] array) {
