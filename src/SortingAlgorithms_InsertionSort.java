@@ -15,8 +15,6 @@ public class SortingAlgorithms_InsertionSort {
 
         System.out.println("Time spent by the algorithm |insertionSort| to sort " +
                 QUANTITY + " elements: " + timeTotal + " milisseconds");
-
-        for (int i : arrayUnorderedNumbers) System.out.println(i);
     }
 
     private static int[] insertionSort(int[] array) {
