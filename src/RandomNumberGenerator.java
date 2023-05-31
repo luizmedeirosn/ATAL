@@ -5,7 +5,7 @@ import java.util.Random;
 
 public class RandomNumberGenerator {
     public static void main(String[] args) {
-        generateRandomNumbersFile(1000000);    
+        generateRandomNumbersFile(100000);    
     }
 
     private static void generateRandomNumbersFile(int quantity) {
