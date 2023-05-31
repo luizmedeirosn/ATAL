@@ -14,7 +14,7 @@ public class SortingAlgorithms_BubbleSort {
         long timeTotal = endTime - startTime;
 
         System.out.println("Time spent by the algorithm |bubbleSort| to sort " +
-        QUANTITY + " elements: " + timeTotal/1000 + " seconds");
+        QUANTITY + " elements: " + timeTotal + " milisseconds");
     }
 
     private static int[] bubbleSort(int[] array) {
